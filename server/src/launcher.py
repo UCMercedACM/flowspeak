@@ -3,15 +3,17 @@ import os
 import sys
 from pathlib import Path
 
-from utils.config import VoiceConfig
+import uvicorn
 from core import VoiceApp
-
+from routes import router
+from utils.config import VoiceConfig
+from uvicorn.supervisors import Multiprocess
 
 config_path = Path(__file__).parent / "config.yml"
 config = VoiceConfig(config_path)
 
-app = VoiceApp()
-
+app = VoiceApp(config=config)
+app.include_router(router)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -29,6 +31,14 @@ if __name__ == "__main__":
         type=int,
     )
     parser.add_argument(
+        "-d",
+        "--dev",
+        action="store_true",
+        default=True,
+        help="Runs dev mode",
+        
+    )
+    parser.add_argument(
         "-nw",
         "--no-workers",
         action="store_true",
@@ -38,8 +48,23 @@ if __name__ == "__main__":
     parser.add_argument("-w", "--workers", default=os.cpu_count() or 1, type=int)
 
     args = parser.parse_args(sys.argv[1:])
-    use_workers = not args.no_workers
-    worker_count = args.workers
+    use_workers = not args.no_workers # type: ignore
+    worker_count = args.workers # type: ignore
+    dev_mode = args.dev # type: ignore
 
-    # We should NOT do this but whatever
-    app.run(host=args.host, port=args.port, debug=True)
+    config = uvicorn.Config(
+        "launcher:app", port=args.port, host=args.host, access_log=True, reload=dev_mode # type: ignore
+    )
+
+    server = uvicorn.Server(config)
+
+    if use_workers:
+        config.workers = worker_count
+        sock = config.bind_socket()
+
+        runner = Multiprocess(config, target=server.run, sockets=[sock])
+    else:
+        runner = server
+
+    runner.run()
+

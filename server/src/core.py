@@ -2,7 +2,7 @@ from __future__ import annotations
 import asyncio
 from contextlib import asynccontextmanager
 from typing import Literal, NamedTuple, Optional, TYPE_CHECKING
-
+import db
 
 from fastapi import FastAPI
 from typing_extensions import Self
@@ -33,4 +33,5 @@ class VoiceApp(FastAPI):
 
     @asynccontextmanager
     async def lifespan(self, app: Self):
+        await db.init_db()
         yield

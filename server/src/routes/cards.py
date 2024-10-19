@@ -3,12 +3,12 @@ from fastapi import APIRouter
 from fastapi.responses import ORJSONResponse
 from utils.request import RouteRequest
 
-router = APIRouter(prefix="/users", tags=["Users"], default_response_class=ORJSONResponse)
+router = APIRouter(prefix="/cards", tags=["Cards"], default_response_class=ORJSONResponse)
 
 
 @router.get(
-    "/get",
-    name="Get users",
+    "/get/{id}",
+    name="Get card",
 )
-async def get_users(request: RouteRequest) -> ORJSONResponse:
+async def get_users(request: RouteRequest, id: int) -> ORJSONResponse:
     return ORJSONResponse({"message": "hi"})

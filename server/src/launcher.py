@@ -2,6 +2,7 @@ import argparse
 import os
 import sys
 from pathlib import Path
+import db
 
 import uvicorn
 from core import VoiceApp
@@ -45,12 +46,21 @@ if __name__ == "__main__":
         default=False,
         help="Runs no workers",
     )
+    parser.add_argument("--database", default="database.db", help="Path to database")
+    parser.add_argument(
+        "--echo-sql",
+        action="store_true",
+        help="Print SQL queries to stdout",
+    )
     parser.add_argument("-w", "--workers", default=os.cpu_count() or 1, type=int)
 
     args = parser.parse_args(sys.argv[1:])
     use_workers = not args.no_workers # type: ignore
     worker_count = args.workers # type: ignore
     dev_mode = args.dev # type: ignore
+    
+    db.set_sqlite_path(args.database) # type: ignore
+    db.set_echo(args.echo_sql) # type: ignore
 
     config = uvicorn.Config(
         "launcher:app", port=args.port, host=args.host, access_log=True, reload=dev_mode # type: ignore

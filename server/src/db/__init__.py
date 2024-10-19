@@ -57,7 +57,7 @@ async def init_db() -> None:
         json_serializer=_pydantic_json_serializer,
     )
 
-    async with _engine.begin() as conn:
+    async with _engine.begin() as conn: # type: ignore
         await conn.run_sync(sqlmodel.SQLModel.metadata.create_all)
 
 

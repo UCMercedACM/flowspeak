@@ -1,8 +1,0 @@
-pre-commit:
-  commands:
-    black-format:
-      run: black src
-    autoflake-format:
-      run: autoflake --in-place --remove-unused-variables --recursive src
-    ruff-check:
-      run: ruff check src --fix --exit-non-zero-on-fix --config pyproject.toml

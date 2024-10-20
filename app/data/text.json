@@ -7,11 +7,11 @@
 		"es": "Escoge tu idioma"
 	},
 	"setupZeroContent": {
-		"en": "We detected your language using your phone's default language but you can change the language of Leeloo AAC if you like.",
-		"de": "Wir haben Ihre Sprache anhand der Standardsprache Ihres Telefons erkannt. Sie können jedoch die Sprache von Leeloo AAC ändern.",
-		"tr": "Telefonunuzun varsayılan dilini kullanarak dilinizi tespit ettik ancak isterseniz Leeloo AAC'nin dilini değiştirebilirsiniz.",
-		"fr": "Nous avons détecté votre langue en utilisant la langue par défaut de votre téléphone mais vous pouvez changer la langue de Leeloo AAC.",
-		"es": "Hemos detectado tu idioma utilizando el idioma por defecto de tu teléfono pero puedes cambiar el idioma de Leeloo AAC si así lo deseas."
+		"en": "We detected your language using your phone's default language but you can change the language of FlowSpeak if you like.",
+		"de": "Wir haben Ihre Sprache anhand der Standardsprache Ihres Telefons erkannt. Sie können jedoch die Sprache von FlowSpeak ändern.",
+		"tr": "Telefonunuzun varsayılan dilini kullanarak dilinizi tespit ettik ancak isterseniz FlowSpeak'nin dilini değiştirebilirsiniz.",
+		"fr": "Nous avons détecté votre langue en utilisant la langue par défaut de votre téléphone mais vous pouvez changer la langue de FlowSpeak.",
+		"es": "Hemos detectado tu idioma utilizando el idioma por defecto de tu teléfono pero puedes cambiar el idioma de FlowSpeak si así lo deseas."
 	},
 	"setupZeroButton": {
 		"en": "Continue",
@@ -35,11 +35,11 @@
 		"es": "Muchas gracias por descargar esta aplicación. Para personalizar tu experiencia es necesario configurar la misma."
 	},
 	"setupOneContent2": {
-		"en": "Follow this 2 steps and start using Leeloo AAC app right away.",
-		"de": "Befolgen Sie diese 2 Schritte und beginnen Sie sofort mit der Leeloo AAC App.",
-		"tr": "Bu 2 adımı izleyin ve hemen Leeloo AAC uygulamasını kullanmaya başlayın.",
-		"fr": "Suivez ces 2 étapes et commencez à utiliser l'application Leeloo AAC tout de suite.",
-		"es": "Sigue estos dos pasos para comenzar a utilizar Leeloo AAC de forma inmediata."
+		"en": "Follow this 2 steps and start using FlowSpeak app right away.",
+		"de": "Befolgen Sie diese 2 Schritte und beginnen Sie sofort mit der FlowSpeak App.",
+		"tr": "Bu 2 adımı izleyin ve hemen FlowSpeak uygulamasını kullanmaya başlayın.",
+		"fr": "Suivez ces 2 étapes et commencez à utiliser l'application FlowSpeak tout de suite.",
+		"es": "Sigue estos dos pasos para comenzar a utilizar FlowSpeak de forma inmediata."
 	},
 	"setupOneButton": {
 		"en": "Let's Start",
@@ -119,11 +119,11 @@
 		"es": "¡Felicitaciones"
 	},
 	"setupFiveContent": {
-		"en": "Setup is successfully completed. Now you can start using Leeloo AAC app. Don't forget to tell your friends about us!",
-		"de": "Das Setup wurde erfolgreich abgeschlossen. Jetzt können Sie die Leeloo AAC App verwenden. Vergiss nicht, deinen Freunden von uns zu erzählen!",
-		"tr": "Kurulum başarıyla tamamlandı. Artık Leeloo AAC uygulamasını kullanmaya başlayabilirsiniz. Arkadaşlarınıza bizi önermeyi unutmayın!",
-		"fr": "L'installation est terminée avec succès. Maintenant, vous pouvez commencer à utiliser l'application Leeloo AAC. N'oubliez pas de parler de nous à vos amis!",
-		"es": "La configuración ha sido terminada. Ya puedes comenzar a usar la aplicación Leeloo AAC. ¡No olvides contarle a tus amigos sobre nosotros!"
+		"en": "Setup is successfully completed. Now you can start using FlowSpeak app. Don't forget to tell your friends about us!",
+		"de": "Das Setup wurde erfolgreich abgeschlossen. Jetzt können Sie die FlowSpeak App verwenden. Vergiss nicht, deinen Freunden von uns zu erzählen!",
+		"tr": "Kurulum başarıyla tamamlandı. Artık FlowSpeak uygulamasını kullanmaya başlayabilirsiniz. Arkadaşlarınıza bizi önermeyi unutmayın!",
+		"fr": "L'installation est terminée avec succès. Maintenant, vous pouvez commencer à utiliser l'application FlowSpeak. N'oubliez pas de parler de nous à vos amis!",
+		"es": "La configuración ha sido terminada. Ya puedes comenzar a usar la aplicación FlowSpeak. ¡No olvides contarle a tus amigos sobre nosotros!"
 	},
 	"setupFiveButton": {
 		"en": "Start Using",

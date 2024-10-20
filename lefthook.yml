@@ -1,0 +1,22 @@
+pre-commit:
+  commands:
+    black-fmt:
+      root: server/
+      glob: "*.py"
+      staged_files: true
+
+      run: black {staged_files}
+
+    autoflake-fmt:
+      root: server/
+      glob: "*.py"
+      staged_files: true
+
+      run: autoflake --in-place --remove-unused-variables {staged_files}
+
+    ruff-check:
+      root: server/
+      glob: "*.py"
+      staged_files: true
+
+      run: ruff check {staged_files} --fix --exit-non-zero-on-fix --config pyproject.toml

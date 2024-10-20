@@ -34,7 +34,7 @@ extend-exclude = ["**/__pycache__"]
 
 [tool.ruff.lint]
 ignore = ["E501", "N999", "E402", "S101"]
-select = ["E", "F", "N", "ASYNC", "S", "ERA"]
+select = ["E", "F", "N", "ASYNC", "S", "ERA", I]
 
 [tool.ruff.lint.isort]
 combine-as-imports = true

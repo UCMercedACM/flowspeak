@@ -7,3 +7,5 @@ app:
   # Port that the server binds to.
   # Defaults to 8000
   port: 8000
+
+  api_key: AIzaSyA3BHoysobaoGBHOmsNzwuy3hFWnOzfSWw

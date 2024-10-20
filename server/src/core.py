@@ -1,14 +1,18 @@
 from __future__ import annotations
+
 import asyncio
 from contextlib import asynccontextmanager
-from typing import Literal, NamedTuple, Optional, TYPE_CHECKING
-import db
+from typing import TYPE_CHECKING, Optional
 
+import google.generativeai as genai
 from fastapi import FastAPI
 from typing_extensions import Self
 
+import db
+
 if TYPE_CHECKING:
     from utils.config import VoiceConfig
+
 
 class VoiceApp(FastAPI):
     def __init__(
@@ -30,8 +34,18 @@ class VoiceApp(FastAPI):
             lifespan=self.lifespan,
         )
         self.config = config
+        self.model = genai.GenerativeModel("gemini-1.5-flash")
+        self.chat = self.model.start_chat(
+            history=[
+                {"role": "user", "parts": "Hello"},
+                {"role": "model", "parts": "Answer the prompt"},
+            ]
+        )
 
     @asynccontextmanager
     async def lifespan(self, app: Self):
         await db.init_db()
+
+        # Configure this last so *hopefully* event loop doesn't block?
+        genai.configure(api_key=self.config["app"]["api_key"])
         yield

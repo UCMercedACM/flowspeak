@@ -1,6 +1,6 @@
 import Storage from 'react-native-storage';
 
-import { AsyncStorage } from 'react-native';
+import { AsyncStorage } from '@react-native-async-storage/async-storage';
 
 import * as Speech from 'expo-speech';
 

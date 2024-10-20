@@ -31,7 +31,7 @@ export default class App extends React.Component {
   }
 
   componentWillUnmount(){
-    Dimensions.removeEventListener("change", () => {});
+    Dimensions.addEventListener("change", () => {});
   }
 
   getLocalizedCardData(lang){

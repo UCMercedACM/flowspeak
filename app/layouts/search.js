@@ -12,11 +12,11 @@ export default class Setting extends React.Component {
   }
 
   componentDidMount(){
-    Event.on("showKeyboard", () => {
+    Event.addListener("showKeyboard", () => {
       this.textInput.focus();
     });
 
-    Event.on("dismissKeyboard", () => {
+    Event.addListener("dismissKeyboard", () => {
       this.textInput.blur();
     });
   }

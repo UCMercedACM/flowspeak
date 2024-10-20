@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {useCallback, useRef} from 'react';
 import {
   Platform,
   StyleSheet,
@@ -30,7 +31,7 @@ type Props = {
   animation?: 'linear' | 'spring' | 'easeInEaseOut' | 'none'
 };
 export default class SwipeUpDown extends Component<Props> {
-  static defautProps = {
+  static defaultProps = {
     disablePressToShow: false,
   };
   constructor(props) {
@@ -52,14 +53,18 @@ export default class SwipeUpDown extends Component<Props> {
     this.checkCollapsed = true;
     this.showFull = this.showFull.bind(this);
 
-    Event.on("showFull", () => {
-      this.showFull();
-    });
-
-    Event.on("showMini", () => {
-      this.showMini();
-    });
+//    Event.on("showFull", () => {
+//      this.showFull();
+//    });
+////
+//    Event.on("showMini", () => {
+//      this.showMini();
+//    });
+//
+    Event.addListener("showFull", () => {this.showFull()});
+    Event.addListener("showMini", () => {this.showMini()});
   }
+
 
   componentWillMount() {
     this._panResponder = PanResponder.create({
@@ -108,7 +113,11 @@ export default class SwipeUpDown extends Component<Props> {
       default:
         break;
     }
-    this.viewRef.setNativeProps(this.customStyle);
+
+    const viewRef = useRef<View>(null);
+    viewRef.setNativeProps(this.customStyle);
+//    useCallback(() => {this.viewRef.current?.setNativeProps(this.customStyle)});
+//      this.updateNatives();
   }
 
   _onPanResponderMove(event, gestureState) {

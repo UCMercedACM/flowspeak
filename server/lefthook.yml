@@ -1,0 +1,10 @@
+pre-commit:
+  glob: "*.py"
+  stage_fixed: true
+  commands:
+    black-format:
+      run: black {staged_files}
+    autoflake-format:
+      run: autoflake --in-place --remove-unused-variables {staged_files}
+    ruff-check:
+      run: ruff check {staged_files} --fix --exit-non-zero-on-fix --config pyproject.toml

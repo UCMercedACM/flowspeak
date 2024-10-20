@@ -1,9 +1,0 @@
-version: 3
-
-tasks:
-  dev:
-    precondition:
-      - test -f src/config.yml
-    cmds:
-      - python3 src/launcher.py --echo-sql --dev --no-workers
-    silent: true
